@@ -1,9 +1,30 @@
 USE Bookish
 
-INSERT INTO Books(Title, Isbn, Authors) VALUES ('Can you solve my problems?', '9781783351152', 'Alex Bellos')
-
+INSERT INTO Books(Title, Isbn, Authors) VALUES ('Can you solve my problems?',       '9781783351152', 'Alex Bellos')
+INSERT INTO Books(Title, Isbn, Authors) VALUES ('Mistborn: The Final Empire',       '978076531178X', 'Brandon Sanderson')
+INSERT INTO Books(Title, Isbn, Authors) VALUES ('Mistborn: The Well of Ascension',  '9780765316882', 'Brandon Sanderson')
+INSERT INTO Books(Title, Isbn, Authors) VALUES ('Mistborn: The Hero of Ages',       '9780765316899', 'Brandon Sanderson')
 INSERT INTO Copies(BookId) VALUES (1)
+INSERT INTO Copies(BookId) VALUES (1)
+INSERT INTO Copies(BookId) VALUES (1)
+INSERT INTO Copies(BookId) VALUES (2)
+INSERT INTO Copies(BookId) VALUES (2)
+INSERT INTO Copies(BookId) VALUES (3)
+INSERT INTO Copies(BookId) VALUES (3)
+INSERT INTO Copies(BookId) VALUES (4)
+INSERT INTO Copies(BookId) VALUES (4)
+INSERT INTO Copies(BookId) VALUES (5)
 
 INSERT INTO LibraryUsers(Name) VALUES ('Andy H')
+INSERT INTO LibraryUsers(Name) VALUES ('John M')
+INSERT INTO LibraryUsers(Name) VALUES ('David S')
+INSERT INTO LibraryUsers(Name) VALUES ('Eva S')
 
-INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES ('1999-01-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   1,   1, '2000-01-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   2,   1, '2020-01-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   3,   1, '2020-01-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   4,   2, '2020-01-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   6,   2, '1999-02-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   8,   2, '1999-03-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (  10,   2, '1999-04-01')
+INSERT INTO LibraryCheckout(CopyId, LibraryUserId, DueDate) VALUES (   7,   3, '1999-01-01')
