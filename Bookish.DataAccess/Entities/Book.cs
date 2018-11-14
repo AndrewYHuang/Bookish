@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bookish.DataAccess.Sql;
 
 namespace Bookish.DataAccess.Entities
 {
@@ -13,9 +14,14 @@ namespace Bookish.DataAccess.Entities
         public string Isbn { get; set; }
         public string Authors { get; set; }
 
-        public int Numbers
+        public int NumberOfCopies
         {
-            get;
+            get
+            {
+                var sqlQuerier = new SquirrelWhisperer();
+                var copyList = sqlQuerier.GetCopiesOfBook(this);
+                return copyList.Count();
+            }
         }
     }
 }

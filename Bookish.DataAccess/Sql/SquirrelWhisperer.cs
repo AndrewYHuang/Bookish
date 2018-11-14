@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,11 +17,20 @@ namespace Bookish.DataAccess.Sql
         {
         }
 
-        public List<Book> GetBookList()
+        public IEnumerable<Book> GetBooks()
         {
-            const string sqlString = "SELECT TOP 100 [BookId], [Title], [Isbn], [Authors] FROM [Books]";
+            var sqlString = "SELECT [BookId], [Title], [Isbn], [Authors] FROM [Books]";
             var bookList = _db.Query<Book>(sqlString).ToList();
             return bookList;
         }
+
+        public IEnumerable<Copy> GetCopiesOfBook(Book book)
+        {
+            var sqlString = $"SELECT [CopyId], [BookId] FROM [Copies] WHERE [BookId] = {book.BookId}";
+            var copyList = _db.Query<Copy>(sqlString).ToList();
+            return copyList;
+        }
+
+
     }
 }

@@ -13,7 +13,7 @@ namespace Bookish.ConsoleApp
         static void Main(string[] args)
         {
             var sqlQuerier = new SquirrelWhisperer();
-            var bookList = sqlQuerier.GetBookList();
+            var bookList = sqlQuerier.GetBooks();
             foreach (var book in bookList)
             {
                 Console.WriteLine(new string('*', 20));
@@ -21,6 +21,7 @@ namespace Bookish.ConsoleApp
                 Console.WriteLine("Title: " + book.Title.ToString());
                 Console.WriteLine("ISBN: " + book.Isbn.ToString());
                 Console.WriteLine("Authors: " + book.Authors.ToString());
+                Console.WriteLine("Number of Copies: " + book.NumberOfCopies.ToString());
                 Console.WriteLine(new string('*', 20));
             }
 
