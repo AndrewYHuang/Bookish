@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookish.ConsoleApp", "Bookish.ConsoleApp\Bookish.ConsoleApp.csproj", "{1F097CC3-7B25-4B23-B524-37389EFD3D4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookish.DataAccess", "Bookish.DataAccess\Bookish.DataAccess.csproj", "{6A262F4B-0B0B-4577-987E-8153F910D309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1F097CC3-7B25-4B23-B524-37389EFD3D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F097CC3-7B25-4B23-B524-37389EFD3D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F097CC3-7B25-4B23-B524-37389EFD3D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A262F4B-0B0B-4577-987E-8153F910D309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A262F4B-0B0B-4577-987E-8153F910D309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A262F4B-0B0B-4577-987E-8153F910D309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A262F4B-0B0B-4577-987E-8153F910D309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bookish.DataAccess.Sql;
+using Bookish.DataAccess.Entities;
 
 namespace Bookish.ConsoleApp
 {
@@ -10,6 +12,20 @@ namespace Bookish.ConsoleApp
     {
         static void Main(string[] args)
         {
+            var sqlQuerier = new SquirrelWhisperer();
+            var bookList = sqlQuerier.GetBookList();
+            foreach (var book in bookList)
+            {
+                Console.WriteLine(new string('*', 20));
+                Console.WriteLine("Book ID: " + book.BookId.ToString());
+                Console.WriteLine("Title: " + book.Title.ToString());
+                Console.WriteLine("ISBN: " + book.Isbn.ToString());
+                Console.WriteLine("Authors: " + book.Authors.ToString());
+                Console.WriteLine(new string('*', 20));
+            }
+
+            Console.ReadLine();
+
         }
     }
 }
