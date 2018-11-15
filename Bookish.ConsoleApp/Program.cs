@@ -22,6 +22,12 @@ namespace Bookish.ConsoleApp
                 Console.WriteLine("ISBN: " + book.Isbn.ToString());
                 Console.WriteLine("Authors: " + book.Authors.ToString());
                 Console.WriteLine("Number of Copies: " + book.NumberOfCopies.ToString());
+                Console.WriteLine("Checked out by:");
+                var checkoutList = sqlQuerier.GetCheckoutsOfBook(book);
+                foreach (var checkout in checkoutList)
+                {
+                    Console.WriteLine(checkout.LibUserId + " due " + checkout.DueDate.ToShortDateString());
+                }
                 Console.WriteLine(new string('*', 20));
             }
 

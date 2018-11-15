@@ -11,7 +11,7 @@ namespace Bookish.DataAccess.Sql
 {
     public class SquirrelWhisperer
     {
-        private readonly IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+        private readonly IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString);
 
         public SquirrelWhisperer()
         {
@@ -31,6 +31,19 @@ namespace Bookish.DataAccess.Sql
             return copyList;
         }
 
+        public IEnumerable<LibCheckout> GetCheckoutsOfBook(Book book)
+        {
+            List<Copy> copyList = GetCopiesOfBook(book).ToList();
+            var sqlString = $"SELECT [CheckoutId], [CopyId], [LibUserId], [DueDate] FROM [LibCheckout] WHERE [CopyId] IN ({string.Join(", ", copyList.Select(x => x.CopyId))})";
+            var checkoutList = _db.Query<LibCheckout>(sqlString).ToList();
+            return checkoutList;
+        }
 
+        public IEnumerable<LibCheckout> GetCheckoutsOfLibUser(string libUser)
+        {
+            var sqlString = $"SELECT [CheckoutId], [CopyId], [LibUserId], [DueDate] FROM [LibCheckout] WHERE [LibUserId] = {libUser}";
+            var checkoutList = _db.Query<LibCheckout>(sqlString).ToList();
+            return checkoutList;
+        }
     }
 }
